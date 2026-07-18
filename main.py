@@ -30,6 +30,14 @@ class BorderThing(pygame.sprite.Sprite):
         self.surf= pygame.Surface((160,20))
         # self.surf.fill(colourpalette[bgindex])        
 
+class BigButton(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.surf = pygame.Surface((240,240))
+        self.surf.fill(pink)
+
+
+
 palette = [white,black,blue,purple,cyan,pink,orange,yellow]
 colourpalette = [blue,purple,cyan,pink,orange,yellow]
 # 960/6 = 160
@@ -47,7 +55,8 @@ for i in range(6):
     screen.blit(thing.surf,(i*160, 0))
     screen.blit(thing.surf,(i*160, 520))
 
-
+BIGBUTTON = BigButton()
+screen.blit(BIGBUTTON.surf,(630,150))
 
 pfpArea = pygame.Surface((500,500))
 pfpArea.fill(palette[bgindex])
@@ -90,6 +99,8 @@ def randomPfp():
     global basecat,eyes, mouth
     global counts
     global screen
+    global bgindex
+    bgindex = random.randint(0,7)
     pfpArea.fill(palette[bgindex])
     pfpArea.blit(pygame.image.load("art/halftonebg.png").convert_alpha(),(0,0))
     for thing in counts:

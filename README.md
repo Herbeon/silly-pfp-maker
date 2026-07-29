@@ -1,18 +1,26 @@
 # silly-pfp-maker
-A silly pfp maker for horizons (and to learn pygame)
+A silly pfp maker for horizons, and to learn some pygame. I drew a bunch of pfps for [Fallout](fallout.hackclub.com), and thought maybe it would be fun to make a minigame where people could get a pfp in my style!
 
-# the backstory
-It is the last day of [Fallout](fallout.hackclub.com). Kaylee and Julia, in order to get back to america, need money. They say something about weighted grants. So I said with great cheer "I'll ship to your ysws!!". A few hours later it is 1 am and I am learning pygame. But kaylee is not getting that weighted grant sorry.
+# screenshots
+![first screenshot of pfp maker! white cat + blue stressed bg](screenshot1.png)
+![second screenshot of pfp maker! white cat + orange sparkling bg](screenshot2.png)
 
-# the backstory (part 2)
-It is now July 9th and it is 3 am in japan. I am going to sleep and ship this to horizons probably instead. I drew most of the stuff on a plane ride so didn't lapse it rip. take this cooked initial commit!
+# the backstory (condensed version)
+On the last day of fallout, Kaylee and Julia, in order to get back to america, needed money. They say something about weighted grants. So I said to Kaylee (with great cheer) "I'll ship to your ysws!!". A few hours later I tried to learn pygame at 1am ("surely this will be chill if I already know python!") but did not end up shipping to kaylee's ysws. A few days later I decided to make a website version of this silly pfp maker, because I think websites are pretty cool and I want to do more javascript.
 
-# the backstory (part 3)
-it is july 18th. I've decided to make a web version of this silly pfp maker. I did however learn pygame while making this, so I'm going to fix up the pygame and make a "random" button and just make a random pfp maker in pygame with this. I'll reuse the assets in the website version
+But I did spend a few hours making this while learning some basic pygame in the process, so I'm shipping a ✨ PFP MAKER DEMO VERSION!! ✨ where you press a **big pink button** to get a randomized pfp cat!
 
 # how to play
-* clone this repo `git clone https://github.com/Herbeon/silly-pfp-maker.git`
-* run main.py (needs python + pygame installed) (nevermind: I will use pyinstaller so you can just run it)
-* make a pfp (credit: herby on slack)
-* pfps are pixels so should be pretty easy to use the fill tool/pixel brushes to edit!
+* go to the itch.io page and run the game!
+* randomize a pfp
+* press the "click to save" button in-game or screenshot the pfp
+* pfps are all pixel art so it should be pretty easy to edit them!
+* credit herby on slack (feel free to message me on there for help, too!)
 
+# how I made this project
+There was no AI used for this project! I referenced a lot of pygame tutorials online, and the art was made in Krita by me. I was in transit after fallout so didn't get the chance to track my art, but I've probably spent ~1 hour on drawing all the assets so far. The game can be played on itch.io!
+
+# things I learned
+This isn't my first time trying to do a pfp maker; I did draw the art for the pfp maker inside the fallout website, but it was in a more cutesy style and sophia's the one who programmed it in (very cool). So for this project I learned how to code one myself (albeit in a different language and with way less complex features, but it is my first time using pygame lol) and I got to draw pfp parts in a different style which was fun :D
+
+![pfp maker logo, a cute white cat wearing a blue bow](ui/icon.png)

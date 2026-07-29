@@ -30,11 +30,11 @@ class BorderThing(pygame.sprite.Sprite):
         self.surf= pygame.Surface((160,20))
         # self.surf.fill(colourpalette[bgindex])        
 
-# class BigButton(pygame.sprite.Sprite):
-#     def __init__(self):
-#         super().__init__()
-#         self.surf = pygame.Surface((240,240))
-#         self.surf.fill(pink)
+class BigButton(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.surf = pygame.Surface((360,40))
+        self.surf.fill(pink)
     
 
 
@@ -57,7 +57,13 @@ for i in range(6):
     screen.blit(thing.surf,(i*160, 520))
 
 # BIGBUTTON = BigButton()
-# screen.blit(BIGBUTTON.surf,(630,150))
+# screen.blit(BIGBUTTON.surf,(540,460))
+# 540, 900
+# 460, 500
+
+savebutton = pygame.image.load("ui/savebutton.png").convert_alpha()
+screen.blit(savebutton,(540,460))
+
 pinkbutton = pygame.image.load("ui/button.png").convert_alpha()
 screen.blit(pinkbutton, (630,150))
 
@@ -124,6 +130,7 @@ def randomPfp():
     screen.blit(pfpArea,(20,20))
 
 running = True
+saved = 0
 while running:
     pygame.display.flip()
     for event in pygame.event.get():
@@ -139,6 +146,13 @@ while running:
                     randomPfp() 
                 # 630, 870
                 # 150, 390
+
+                # 540, 900
+# 460, 500
+                elif(whee[0] > 540 and whee[0] < 900 and whee[1] > 460 and whee[1] < 500):
+                    pygame.image.save(pfpArea, f"random_herbycat_pfp{saved}.png")
+                    saved += 1
+
         # if (event.type == pygame.KEYDOWN):
         #     if (event.key == pygame.K_LEFT):
         #         bgindex+= 1
@@ -149,7 +163,7 @@ while running:
         #         # basecat = pygame.image.load(f"art/body{bodyindex}.png").convert_alpha()
         #         updatePfp()
         #     elif (event.key == pygame.K_RIGHT):
-        #         randomPfp()
+        #         pygame.image.save(pfpArea, "random_herbycat_pfp.png")
 
     # keys = pygame.key.get_pressed()
 

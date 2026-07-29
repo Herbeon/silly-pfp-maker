@@ -1,12 +1,23 @@
 import pygame
 import random
 
-# omg let's make this oopmaxxing
+import os
+import sys
+
+def get_ui_path(relative_path):
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".") 
+
+    return os.path.join(base_path, relative_path)
 
 pygame.init()
 
+tt = ""
 # icon
-icon = pygame.image.load("game/ui/icon.png")
+icon = pygame.image.load(get_ui_path(tt+"ui/icon.png"))
 pygame.display.set_icon(icon) 
 
 
@@ -19,7 +30,7 @@ pink = (244, 147, 242)
 orange = (255, 198, 204)
 yellow = (228,250,202)
 
-counts = [("body",4), ("eye", 6), ("mouth", 7),("decor",6)]
+counts = [("bg",4),("body",4), ("eye", 6), ("mouth", 7),("decor",6)]
 # one less than amount for indexing
 # haha six seven
 
@@ -52,30 +63,28 @@ for i in range(6):
     screen.blit(thing.surf,(i*160, 0))
     screen.blit(thing.surf,(i*160, 520))
 
-savebutton = pygame.image.load("game/ui/savebutton.png").convert_alpha()
+savebutton = pygame.image.load(get_ui_path(tt+"ui/savebutton.png")).convert_alpha()
 screen.blit(savebutton,(540,460))
 
-pinkbutton = pygame.image.load("game/ui/button.png").convert_alpha()
+pinkbutton = pygame.image.load(get_ui_path(tt+"ui/button.png")).convert_alpha()
 screen.blit(pinkbutton, (630,150))
 
 pfpArea = pygame.Surface((500,500))
 pfpArea.fill(palette[bgindex])
-pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
 
-
-basecat = pygame.image.load(f"game/art/body{bodyindex}.png").convert_alpha()
+basecat = pygame.image.load(get_ui_path(tt+f"art/body{bodyindex}.png")).convert_alpha()
 pfpArea.blit(basecat,(0,0))
 
-eyes = pygame.image.load("game/art/eye0.png").convert_alpha()
+eyes = pygame.image.load(get_ui_path(tt+"art/eye0.png")).convert_alpha()
 pfpArea.blit(eyes,(0,0))
 
-mouth = pygame.image.load("game/art/mouth0.png").convert_alpha()
+mouth = pygame.image.load(get_ui_path(tt+"art/mouth0.png")).convert_alpha()
 pfpArea.blit(mouth,(0,0))
 
 screen.blit(pfpArea,(20,20))
 # pygame.draw.rect(screen, black, [20, 20, 500, 500], 1)
 
-font = pygame.font.Font("game/ui/comic.ttf",20)
+font = pygame.font.Font(get_ui_path(tt+"ui/comic.ttf"),20)
 title = font.render("hi welcome to my silly mini pfp maker", True, black)
 screen.blit(title, (540,60))
 text1 = font.render("in this game you gamble a cat.", True, black)
@@ -86,17 +95,6 @@ screen.blit(text2, (540, 110))
 text3 = font.render("click the button above for a random cat :)", True, black)
 screen.blit(text3,(540,420))
 
-def updatePfp():
-    global pfpArea
-    global basecat,eyes, mouth
-    global screen
-    pfpArea.fill(palette[bgindex])
-    pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
-    pfpArea.blit(basecat,(0,0))
-    pfpArea.blit(eyes,(0,0))
-    pfpArea.blit(mouth,(0,0))
-    screen.blit(pfpArea,(20,20))
-
 def randomPfp():
     global pfpArea
     global basecat,eyes, mouth
@@ -105,18 +103,8 @@ def randomPfp():
     global bgindex
     bgindex = random.randint(0,7)
     pfpArea.fill(palette[bgindex])
-    bgpattern = random.randint(0,4)
-    # hardcoding here I goo
-    if(bgpattern == 1):
-        pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
-    if(bgpattern == 2):
-        pfpArea.blit(pygame.image.load("game/art/ditherbg.png").convert_alpha(),(0,0))
-    if(bgpattern == 3):
-        pfpArea.blit(pygame.image.load("game/art/gridbg.png").convert_alpha(),(0,0))
-    if(bgpattern == 4):
-        pfpArea.blit(pygame.image.load("game/art/linesbg.png").convert_alpha(),(0,0))
     for thing in counts:
-        pfpArea.blit(pygame.image.load(f"game/art/{thing[0]}{random.randint(0,thing[1])}.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load(get_ui_path(tt+f"art/{thing[0]}{random.randint(0,thing[1])}.png")).convert_alpha(),(0,0))
 
     screen.blit(pfpArea,(20,20))
 

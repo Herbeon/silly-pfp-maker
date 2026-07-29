@@ -16,6 +16,10 @@ def get_ui_path(relative_path):
 pygame.init()
 
 tt = ""
+# Note to future self: because my pygame is weird, it thinks the directory is the folder above the "game" folder
+# Debugging or adding new stuff needs to be done with tt = "game/"
+
+
 # icon
 icon = pygame.image.load(get_ui_path(tt+"ui/icon.png"))
 pygame.display.set_icon(icon) 

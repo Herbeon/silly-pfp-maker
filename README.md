@@ -17,8 +17,8 @@ But I did spend a few hours (5, apparently) making this while learning some basi
 * pfps are all pixel art so it should be pretty easy to edit them!
 * credit herby on slack (feel free to message me on there for help, too!)
 
-# no linux or windows?
-* if you have python and pygame installed, you can clone this repo and run main.py :D
+# no linux?
+* if you have python and pygame installed, you can clone this repo/download the "game" folder and run main.py
 
 # how I made this project
 There was no AI used for this project! I referenced a lot of pygame tutorials online, and the art was made in Krita by me. I was in transit after fallout so didn't get the chance to track my art, but I've probably spent ~1 hour on drawing all the assets so far. I used Pyinstaller to make an executable of the game, which [can be played on itch.io!]((https://herbeon.itch.io/silly-pfp-maker-demo))

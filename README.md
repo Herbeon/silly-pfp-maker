@@ -13,7 +13,7 @@ But I did spend a few hours (5, apparently) making this while learning some basi
 # how to play
 ## system requirements
 * everything is in one executable file! download the one from the folder labelled for windows if you're on windows, or the one labelled for linux if you are on linux.
-* if you're on windows, microsoft might think the file is a virus. Click "more info" and "run anyway" to run.
+* if you're on windows, microsoft Smartscreen might think the file is a virus. Click "More info" and "run anyway" to run.
 
 ## instructions
 * go to the [itch.io page](https://herbeon.itch.io/silly-pfp-maker-demo), download and run the executable! (requires linux or windows, but no python/pygame required!)

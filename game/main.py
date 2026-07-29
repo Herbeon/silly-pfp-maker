@@ -6,7 +6,7 @@ import random
 pygame.init()
 
 # icon
-icon = pygame.image.load("ui/icon.png")
+icon = pygame.image.load("game/ui/icon.png")
 pygame.display.set_icon(icon) 
 
 
@@ -23,7 +23,6 @@ counts = [("body",4), ("eye", 6), ("mouth", 7),("decor",6)]
 # one less than amount for indexing
 # haha six seven
 
-
 class BorderThing(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -35,9 +34,6 @@ class BigButton(pygame.sprite.Sprite):
         super().__init__()
         self.surf = pygame.Surface((360,40))
         self.surf.fill(pink)
-    
-
-
 
 palette = [white,black,blue,purple,cyan,pink,orange,yellow]
 colourpalette = [blue,purple,cyan,pink,orange,yellow]
@@ -56,35 +52,30 @@ for i in range(6):
     screen.blit(thing.surf,(i*160, 0))
     screen.blit(thing.surf,(i*160, 520))
 
-# BIGBUTTON = BigButton()
-# screen.blit(BIGBUTTON.surf,(540,460))
-# 540, 900
-# 460, 500
-
-savebutton = pygame.image.load("ui/savebutton.png").convert_alpha()
+savebutton = pygame.image.load("game/ui/savebutton.png").convert_alpha()
 screen.blit(savebutton,(540,460))
 
-pinkbutton = pygame.image.load("ui/button.png").convert_alpha()
+pinkbutton = pygame.image.load("game/ui/button.png").convert_alpha()
 screen.blit(pinkbutton, (630,150))
 
 pfpArea = pygame.Surface((500,500))
 pfpArea.fill(palette[bgindex])
-pfpArea.blit(pygame.image.load("art/halftonebg.png").convert_alpha(),(0,0))
+pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
 
 
-basecat = pygame.image.load(f"art/body{bodyindex}.png").convert_alpha()
+basecat = pygame.image.load(f"game/art/body{bodyindex}.png").convert_alpha()
 pfpArea.blit(basecat,(0,0))
 
-eyes = pygame.image.load("art/eye0.png").convert_alpha()
+eyes = pygame.image.load("game/art/eye0.png").convert_alpha()
 pfpArea.blit(eyes,(0,0))
 
-mouth = pygame.image.load("art/mouth0.png").convert_alpha()
+mouth = pygame.image.load("game/art/mouth0.png").convert_alpha()
 pfpArea.blit(mouth,(0,0))
 
 screen.blit(pfpArea,(20,20))
 # pygame.draw.rect(screen, black, [20, 20, 500, 500], 1)
 
-font = pygame.font.Font("ui/comic.ttf",20)
+font = pygame.font.Font("game/ui/comic.ttf",20)
 title = font.render("hi welcome to my silly mini pfp maker", True, black)
 screen.blit(title, (540,60))
 text1 = font.render("in this game you gamble a cat.", True, black)
@@ -100,7 +91,7 @@ def updatePfp():
     global basecat,eyes, mouth
     global screen
     pfpArea.fill(palette[bgindex])
-    pfpArea.blit(pygame.image.load("art/halftonebg.png").convert_alpha(),(0,0))
+    pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
     pfpArea.blit(basecat,(0,0))
     pfpArea.blit(eyes,(0,0))
     pfpArea.blit(mouth,(0,0))
@@ -117,15 +108,15 @@ def randomPfp():
     bgpattern = random.randint(0,4)
     # hardcoding here I goo
     if(bgpattern == 1):
-        pfpArea.blit(pygame.image.load("art/halftonebg.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load("game/art/halftonebg.png").convert_alpha(),(0,0))
     if(bgpattern == 2):
-        pfpArea.blit(pygame.image.load("art/ditherbg.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load("game/art/ditherbg.png").convert_alpha(),(0,0))
     if(bgpattern == 3):
-        pfpArea.blit(pygame.image.load("art/gridbg.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load("game/art/gridbg.png").convert_alpha(),(0,0))
     if(bgpattern == 4):
-        pfpArea.blit(pygame.image.load("art/linesbg.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load("game/art/linesbg.png").convert_alpha(),(0,0))
     for thing in counts:
-        pfpArea.blit(pygame.image.load(f"art/{thing[0]}{random.randint(0,thing[1])}.png").convert_alpha(),(0,0))
+        pfpArea.blit(pygame.image.load(f"game/art/{thing[0]}{random.randint(0,thing[1])}.png").convert_alpha(),(0,0))
 
     screen.blit(pfpArea,(20,20))
 
@@ -136,47 +127,13 @@ while running:
     for event in pygame.event.get():
         if (event.type == pygame.QUIT):
             running = False
-        # idea: select the thing to change and use arrow keys???
-        # later
         if(event.type == pygame.MOUSEBUTTONDOWN):
                 whee = pygame.mouse.get_pos()
-                # print(whee[0])
-                # print(whee[1])
                 if(whee[0] > 630 and whee[0] < 870 and whee[1] > 150 and whee[1] < 390):
                     randomPfp() 
-                # 630, 870
-                # 150, 390
-
-                # 540, 900
-# 460, 500
                 elif(whee[0] > 540 and whee[0] < 900 and whee[1] > 460 and whee[1] < 500):
                     pygame.image.save(pfpArea, f"random_herbycat_pfp{saved}.png")
                     saved += 1
-
-        # if (event.type == pygame.KEYDOWN):
-        #     if (event.key == pygame.K_LEFT):
-        #         bgindex+= 1
-        #         if(bgindex > 7):
-        #             bgindex = 0
-        #         pfpArea.fill(palette[bgindex])
-        #         pfpArea.blit(pygame.image.load("art/halftonebg.png").convert_alpha(),(0,0))
-        #         # basecat = pygame.image.load(f"art/body{bodyindex}.png").convert_alpha()
-        #         updatePfp()
-        #     elif (event.key == pygame.K_RIGHT):
-        #         pygame.image.save(pfpArea, "random_herbycat_pfp.png")
-
-    # keys = pygame.key.get_pressed()
-
-    # if(keys[pygame.K_a]):
-    #     bodyindex += 1
-    #     if(bodyindex > 3):
-    #         bodyindex = 0
-    #     body = pygame.image.load(f"art/body{bodyindex}.png").convert_alpha()
-    #     pfpArea.blit(body,(0,0))
-    #     screen.blit(pfpArea,(20,20))
-    #     pygame.display.update()
-
-
 
 
 pygame.quit()

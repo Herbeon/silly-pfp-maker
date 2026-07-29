@@ -2,8 +2,8 @@
 A silly pfp maker for horizons, and to learn some pygame. I drew a bunch of pfps for [Fallout](fallout.hackclub.com), and thought maybe it would be fun to make a minigame where people could get a pfp in my style!
 
 # screenshots
-![first screenshot of pfp maker! white cat + blue stressed bg](screenshot1.png)
-![second screenshot of pfp maker! white cat + orange sparkling bg](screenshot2.png)
+![first screenshot of pfp maker! white cat + cyan stressed bg](screenshot1.png)
+![second screenshot of pfp maker! white cat + yellow and pink flowers bg](screenshot2.png)
 
 # the backstory (condensed version)
 On the last day of fallout, Kaylee and Julia, in order to get back to america, needed money. They say something about weighted grants. So I said to Kaylee (with great cheer) "I'll ship to your ysws!!". A few hours later I tried to learn pygame at 1am ("surely this will be chill if I already know python!") but did not end up shipping to kaylee's ysws. A few days later I decided to make a website version of this silly pfp maker, because I think websites are pretty cool and I want to do more javascript.

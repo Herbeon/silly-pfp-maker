@@ -12,8 +12,8 @@ But I did spend a few hours (5, apparently) making this while learning some basi
 
 # how to play
 * go to the [itch.io page](https://herbeon.itch.io/silly-pfp-maker-demo), download and run the executable! (requires linux or windows, but no python/pygame required!)
-* randomize a pfp
-* press the "click to save" button in-game or screenshot the pfp
+* randomize a pfp by pressing the button
+* press the "click to save" button in-game (downloads an image in the same folder as your executable) or screenshot the pfp
 * pfps are all pixel art so it should be pretty easy to edit them!
 * credit herby on slack (feel free to message me on there for help, too!)
 
